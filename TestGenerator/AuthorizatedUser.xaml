@@ -1,0 +1,53 @@
+﻿<Page x:Class="TestGenerator.AuthorizatedUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestGenerator"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AuthorizatedUser">
+
+    <Grid Background="#FF374E56">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0" x:Name="DataGridTestView" SelectionChanged="DataGridTestView_SelectionChanged" IsReadOnly="True" ></DataGrid>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="NameField" Grid.Column="0"></TextBox>
+                <TextBox x:Name="DescField" Grid.Column="1"></TextBox>
+                <TextBox x:Name="FirstAnswField" Grid.Column="2"></TextBox>
+                <TextBox x:Name="SecondAnswField" Grid.Column="3"></TextBox>
+                <TextBox x:Name="ThirdAnswField" Grid.Column="4"></TextBox>
+                <ComboBox x:Name="RightAnswBox" Grid.Column="5" SelectionChanged="RightAnswBox_SelectionChanged"></ComboBox>
+            </Grid>
+        </Grid>
+     
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="CreateNewTestBut" Grid.Column="0" Content="Создать новый тест" Click="CreateNewTestBut_Click"></Button>
+            <Button x:Name="Deleter" Grid.Column="1" Content="Удалить" Click="Deleter_Click"></Button>
+            <Button x:Name="Updater" Grid.Column="3" Content="Обновить тест" Click="Updater_Click"></Button>
+        </Grid>
+    </Grid>
+</Page>
