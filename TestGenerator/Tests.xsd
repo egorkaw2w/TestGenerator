@@ -7,36 +7,6 @@
           <Connection AppSettingsPropertyName="TestsConnectionString" ConnectionStringObject="Data Source=KOMPUTER\SQLEXPRESS;Initial Catalog=Tests;Integrated Security=True;Encrypt=False" IsAppSettingsProperty="false" Modifier="Assembly" Name="TestsConnectionString" ParameterPrefix="@" Provider="Microsoft.Data.SqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TestViewTableAdapter" GeneratorDataComponentClassName="TestViewTableAdapter" Name="TestView" UserDataComponentName="TestViewTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="TestsConnectionString" DbObjectName="Tests.dbo.TestView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Название, Описание, [Первый ответ], [Второй ответ], [Третий ответ], [Правильный ответ] FROM dbo.TestView</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Название" DataSetColumn="Название" />
-              <Mapping SourceColumn="Описание" DataSetColumn="Описание" />
-              <Mapping SourceColumn="Первый ответ" DataSetColumn="Первый ответ" />
-              <Mapping SourceColumn="Второй ответ" DataSetColumn="Второй ответ" />
-              <Mapping SourceColumn="Третий ответ" DataSetColumn="Третий ответ" />
-              <Mapping SourceColumn="Правильный ответ" DataSetColumn="Правильный ответ" />
-            </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="TestsConnectionString" DbObjectName="Tests.dbo.TestView" DbObjectType="View" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="SelectAll" GetMethodModifier="Public" GetMethodName="SelectAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SelectAll" UserSourceName="SelectAll">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Название, Описание, [Первый ответ], [Второй ответ], [Третий ответ], [Правильный ответ] FROM dbo.TestView</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RightTestViewTableAdapter" GeneratorDataComponentClassName="RightTestViewTableAdapter" Name="RightTestView" UserDataComponentName="RightTestViewTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="TestsConnectionString" DbObjectName="Tests.dbo.RightTestView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -171,7 +141,7 @@ SELECT TestID, TestName, TestDesc, FirstAnsw, SecondAnsw, ThirdAnsw, ID_RightAns
               <Mapping SourceColumn="ID_RightAnsw" DataSetColumn="ID_RightAnsw" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="TestsConnectionString" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="TestsConnectionString" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Test
@@ -182,7 +152,7 @@ WHERE        (TestName = @Original_TestName)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="TestsConnectionString" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Insert1" Modifier="Public" Name="Insert1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Insert1">
+              <DbSource ConnectionRef="TestsConnectionString" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Insert1" Modifier="Public" Name="Insert1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Insert1">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[Test] ([TestName], [TestDesc], [FirstAnsw], [SecondAnsw], [ThirdAnsw], [ID_RightAnsw]) VALUES (@TestName, @TestDesc, @FirstAnsw, @SecondAnsw, @ThirdAnsw, @ID_RightAnsw);
@@ -201,7 +171,12 @@ SELECT TestID, TestName, TestDesc, FirstAnsw, SecondAnsw, ThirdAnsw, ID_RightAns
               <DbSource ConnectionRef="TestsConnectionString" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>UPDATE [dbo].[Test] SET [TestName] = @TestName, [TestDesc] = @TestDesc, [FirstAnsw] = @FirstAnsw, [SecondAnsw] = @SecondAnsw, [ThirdAnsw] = @ThirdAnsw, [ID_RightAnsw] = @ID_RightAnsw </CommandText>
+                    <CommandText>UPDATE [dbo].[Test]
+ SET [TestName] = @TestName, [TestDesc] = @TestDesc, [FirstAnsw] = @FirstAnsw, [SecondAnsw] = @SecondAnsw, [ThirdAnsw] = @ThirdAnsw, [ID_RightAnsw] = @ID_RightAnsw
+
+
+ WHERE (([TestID] = @Original_TestID));
+</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="TestName" ColumnName="TestName" DataSourceName="Tests.dbo.Test" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@TestName" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="TestName" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="TestDesc" ColumnName="TestDesc" DataSourceName="Tests.dbo.Test" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@TestDesc" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="TestDesc" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -209,23 +184,105 @@ SELECT TestID, TestName, TestDesc, FirstAnsw, SecondAnsw, ThirdAnsw, ID_RightAns
                       <Parameter AllowDbNull="false" AutogeneratedName="SecondAnsw" ColumnName="SecondAnsw" DataSourceName="Tests.dbo.Test" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@SecondAnsw" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="SecondAnsw" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="ThirdAnsw" ColumnName="ThirdAnsw" DataSourceName="Tests.dbo.Test" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@ThirdAnsw" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="ThirdAnsw" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="ID_RightAnsw" ColumnName="ID_RightAnsw" DataSourceName="Tests.dbo.Test" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_RightAnsw" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_RightAnsw" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_TestID" ColumnName="TestID" DataSourceName="Tests.dbo.Test" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_TestID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="TestID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TestViewTableAdapter" GeneratorDataComponentClassName="TestViewTableAdapter" Name="TestView" UserDataComponentName="TestViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TestsConnectionString" DbObjectName="Tests.dbo.TestView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT АЙДИ, Название, Описание, [Первый ответ], [Второй ответ], [Третий ответ], [Правильный ответ] FROM dbo.TestView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="АЙДИ" DataSetColumn="АЙДИ" />
+              <Mapping SourceColumn="Название" DataSetColumn="Название" />
+              <Mapping SourceColumn="Описание" DataSetColumn="Описание" />
+              <Mapping SourceColumn="Первый ответ" DataSetColumn="Первый ответ" />
+              <Mapping SourceColumn="Второй ответ" DataSetColumn="Второй ответ" />
+              <Mapping SourceColumn="Третий ответ" DataSetColumn="Третий ответ" />
+              <Mapping SourceColumn="Правильный ответ" DataSetColumn="Правильный ответ" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="Tests" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="Tests" msprop:Generator_DataSetName="Tests">
+  <xs:element name="Tests" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Tests" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Tests">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RightTestView" msprop:Generator_RowClassName="RightTestViewRow" msprop:Generator_RowEvHandlerName="RightTestViewRowChangeEventHandler" msprop:Generator_RowDeletedName="RightTestViewRowDeleted" msprop:Generator_RowDeletingName="RightTestViewRowDeleting" msprop:Generator_RowEvArgName="RightTestViewRowChangeEvent" msprop:Generator_TablePropName="RightTestView" msprop:Generator_RowChangedName="RightTestViewRowChanged" msprop:Generator_UserTableName="RightTestView" msprop:Generator_RowChangingName="RightTestViewRowChanging" msprop:Generator_TableClassName="RightTestViewDataTable" msprop:Generator_TableVarName="tableRightTestView">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Правильный_x0020_ответ" msprop:Generator_UserColumnName="Правильный ответ" msprop:Generator_ColumnPropNameInTable="Правильный_ответColumn" msprop:Generator_ColumnPropNameInRow="Правильный_ответ" msprop:Generator_ColumnVarNameInTable="columnПравильный_ответ" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RightAnswers" msprop:Generator_RowClassName="RightAnswersRow" msprop:Generator_RowEvHandlerName="RightAnswersRowChangeEventHandler" msprop:Generator_RowDeletedName="RightAnswersRowDeleted" msprop:Generator_RowDeletingName="RightAnswersRowDeleting" msprop:Generator_RowEvArgName="RightAnswersRowChangeEvent" msprop:Generator_TablePropName="RightAnswers" msprop:Generator_RowChangedName="RightAnswersRowChanged" msprop:Generator_UserTableName="RightAnswers" msprop:Generator_RowChangingName="RightAnswersRowChanging" msprop:Generator_TableClassName="RightAnswersDataTable" msprop:Generator_TableVarName="tableRightAnswers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RightAnswId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="RightAnswId" msprop:Generator_ColumnPropNameInTable="RightAnswIdColumn" msprop:Generator_ColumnPropNameInRow="RightAnswId" msprop:Generator_ColumnVarNameInTable="columnRightAnswId" type="xs:int" />
+              <xs:element name="RightAnswer" msprop:Generator_UserColumnName="RightAnswer" msprop:Generator_ColumnPropNameInTable="RightAnswerColumn" msprop:Generator_ColumnPropNameInRow="RightAnswer" msprop:Generator_ColumnVarNameInTable="columnRightAnswer" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Test" msprop:Generator_RowClassName="TestRow" msprop:Generator_RowEvHandlerName="TestRowChangeEventHandler" msprop:Generator_RowDeletedName="TestRowDeleted" msprop:Generator_RowDeletingName="TestRowDeleting" msprop:Generator_RowEvArgName="TestRowChangeEvent" msprop:Generator_TablePropName="Test" msprop:Generator_RowChangedName="TestRowChanged" msprop:Generator_UserTableName="Test" msprop:Generator_RowChangingName="TestRowChanging" msprop:Generator_TableClassName="TestDataTable" msprop:Generator_TableVarName="tableTest">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TestID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="TestID" msprop:Generator_ColumnPropNameInTable="TestIDColumn" msprop:Generator_ColumnPropNameInRow="TestID" msprop:Generator_ColumnVarNameInTable="columnTestID" type="xs:int" />
+              <xs:element name="TestName" msprop:Generator_UserColumnName="TestName" msprop:Generator_ColumnPropNameInTable="TestNameColumn" msprop:Generator_ColumnPropNameInRow="TestName" msprop:Generator_ColumnVarNameInTable="columnTestName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestDesc" msprop:Generator_UserColumnName="TestDesc" msprop:Generator_ColumnPropNameInTable="TestDescColumn" msprop:Generator_ColumnPropNameInRow="TestDesc" msprop:Generator_ColumnVarNameInTable="columnTestDesc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FirstAnsw" msprop:Generator_UserColumnName="FirstAnsw" msprop:Generator_ColumnPropNameInTable="FirstAnswColumn" msprop:Generator_ColumnPropNameInRow="FirstAnsw" msprop:Generator_ColumnVarNameInTable="columnFirstAnsw">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SecondAnsw" msprop:Generator_UserColumnName="SecondAnsw" msprop:Generator_ColumnPropNameInTable="SecondAnswColumn" msprop:Generator_ColumnPropNameInRow="SecondAnsw" msprop:Generator_ColumnVarNameInTable="columnSecondAnsw">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ThirdAnsw" msprop:Generator_UserColumnName="ThirdAnsw" msprop:Generator_ColumnPropNameInTable="ThirdAnswColumn" msprop:Generator_ColumnPropNameInRow="ThirdAnsw" msprop:Generator_ColumnVarNameInTable="columnThirdAnsw">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_RightAnsw" msprop:Generator_UserColumnName="ID_RightAnsw" msprop:Generator_ColumnPropNameInTable="ID_RightAnswColumn" msprop:Generator_ColumnPropNameInRow="ID_RightAnsw" msprop:Generator_ColumnVarNameInTable="columnID_RightAnsw" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="TestView" msprop:Generator_RowEvHandlerName="TestViewRowChangeEventHandler" msprop:Generator_RowDeletedName="TestViewRowDeleted" msprop:Generator_RowDeletingName="TestViewRowDeleting" msprop:Generator_RowEvArgName="TestViewRowChangeEvent" msprop:Generator_TablePropName="TestView" msprop:Generator_RowChangedName="TestViewRowChanged" msprop:Generator_RowChangingName="TestViewRowChanging" msprop:Generator_TableClassName="TestViewDataTable" msprop:Generator_RowClassName="TestViewRow" msprop:Generator_TableVarName="tableTestView" msprop:Generator_UserTableName="TestView">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="АЙДИ" msprop:Generator_ColumnPropNameInRow="АЙДИ" msprop:Generator_ColumnPropNameInTable="АЙДИColumn" msprop:Generator_ColumnVarNameInTable="columnАЙДИ" msprop:Generator_UserColumnName="АЙДИ" type="xs:int" />
               <xs:element name="Название" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_UserColumnName="Название">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -265,64 +322,6 @@ SELECT TestID, TestName, TestDesc, FirstAnsw, SecondAnsw, ThirdAnsw, ID_RightAns
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RightTestView" msprop:Generator_RowEvHandlerName="RightTestViewRowChangeEventHandler" msprop:Generator_RowDeletedName="RightTestViewRowDeleted" msprop:Generator_RowDeletingName="RightTestViewRowDeleting" msprop:Generator_RowEvArgName="RightTestViewRowChangeEvent" msprop:Generator_TablePropName="RightTestView" msprop:Generator_RowChangedName="RightTestViewRowChanged" msprop:Generator_RowChangingName="RightTestViewRowChanging" msprop:Generator_TableClassName="RightTestViewDataTable" msprop:Generator_RowClassName="RightTestViewRow" msprop:Generator_TableVarName="tableRightTestView" msprop:Generator_UserTableName="RightTestView">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Правильный_x0020_ответ" msprop:Generator_ColumnPropNameInRow="Правильный_ответ" msprop:Generator_ColumnPropNameInTable="Правильный_ответColumn" msprop:Generator_ColumnVarNameInTable="columnПравильный_ответ" msprop:Generator_UserColumnName="Правильный ответ" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="RightAnswers" msprop:Generator_RowEvHandlerName="RightAnswersRowChangeEventHandler" msprop:Generator_RowDeletedName="RightAnswersRowDeleted" msprop:Generator_RowDeletingName="RightAnswersRowDeleting" msprop:Generator_RowEvArgName="RightAnswersRowChangeEvent" msprop:Generator_TablePropName="RightAnswers" msprop:Generator_RowChangedName="RightAnswersRowChanged" msprop:Generator_RowChangingName="RightAnswersRowChanging" msprop:Generator_TableClassName="RightAnswersDataTable" msprop:Generator_RowClassName="RightAnswersRow" msprop:Generator_TableVarName="tableRightAnswers" msprop:Generator_UserTableName="RightAnswers">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="RightAnswId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="RightAnswId" msprop:Generator_ColumnPropNameInTable="RightAnswIdColumn" msprop:Generator_ColumnVarNameInTable="columnRightAnswId" msprop:Generator_UserColumnName="RightAnswId" type="xs:int" />
-              <xs:element name="RightAnswer" msprop:Generator_ColumnPropNameInRow="RightAnswer" msprop:Generator_ColumnPropNameInTable="RightAnswerColumn" msprop:Generator_ColumnVarNameInTable="columnRightAnswer" msprop:Generator_UserColumnName="RightAnswer" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Test" msprop:Generator_RowEvHandlerName="TestRowChangeEventHandler" msprop:Generator_RowDeletedName="TestRowDeleted" msprop:Generator_RowDeletingName="TestRowDeleting" msprop:Generator_RowEvArgName="TestRowChangeEvent" msprop:Generator_TablePropName="Test" msprop:Generator_RowChangedName="TestRowChanged" msprop:Generator_RowChangingName="TestRowChanging" msprop:Generator_TableClassName="TestDataTable" msprop:Generator_RowClassName="TestRow" msprop:Generator_TableVarName="tableTest" msprop:Generator_UserTableName="Test">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="TestID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="TestID" msprop:Generator_ColumnPropNameInTable="TestIDColumn" msprop:Generator_ColumnVarNameInTable="columnTestID" msprop:Generator_UserColumnName="TestID" type="xs:int" />
-              <xs:element name="TestName" msprop:Generator_ColumnPropNameInRow="TestName" msprop:Generator_ColumnPropNameInTable="TestNameColumn" msprop:Generator_ColumnVarNameInTable="columnTestName" msprop:Generator_UserColumnName="TestName">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TestDesc" msprop:Generator_ColumnPropNameInRow="TestDesc" msprop:Generator_ColumnPropNameInTable="TestDescColumn" msprop:Generator_ColumnVarNameInTable="columnTestDesc" msprop:Generator_UserColumnName="TestDesc">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="FirstAnsw" msprop:Generator_ColumnPropNameInRow="FirstAnsw" msprop:Generator_ColumnPropNameInTable="FirstAnswColumn" msprop:Generator_ColumnVarNameInTable="columnFirstAnsw" msprop:Generator_UserColumnName="FirstAnsw">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="SecondAnsw" msprop:Generator_ColumnPropNameInRow="SecondAnsw" msprop:Generator_ColumnPropNameInTable="SecondAnswColumn" msprop:Generator_ColumnVarNameInTable="columnSecondAnsw" msprop:Generator_UserColumnName="SecondAnsw">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ThirdAnsw" msprop:Generator_ColumnPropNameInRow="ThirdAnsw" msprop:Generator_ColumnPropNameInTable="ThirdAnswColumn" msprop:Generator_ColumnVarNameInTable="columnThirdAnsw" msprop:Generator_UserColumnName="ThirdAnsw">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ID_RightAnsw" msprop:Generator_ColumnPropNameInRow="ID_RightAnsw" msprop:Generator_ColumnPropNameInTable="ID_RightAnswColumn" msprop:Generator_ColumnVarNameInTable="columnID_RightAnsw" msprop:Generator_UserColumnName="ID_RightAnsw" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -333,10 +332,14 @@ SELECT TestID, TestName, TestDesc, FirstAnsw, SecondAnsw, ThirdAnsw, ID_RightAns
       <xs:selector xpath=".//mstns:Test" />
       <xs:field xpath="mstns:TestID" />
     </xs:unique>
+    <xs:unique name="TestView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TestView" />
+      <xs:field xpath="mstns:АЙДИ" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Test__ID_RightAn__5535A963" msdata:parent="RightAnswers" msdata:child="Test" msdata:parentkey="RightAnswId" msdata:childkey="ID_RightAnsw" msprop:Generator_UserParentTable="RightAnswers" msprop:Generator_UserChildTable="Test" msprop:Generator_RelationVarName="relationFK__Test__ID_RightAn__5535A963" msprop:Generator_ChildPropName="GetTestRows" msprop:Generator_ParentPropName="RightAnswersRow" msprop:Generator_UserRelationName="FK__Test__ID_RightAn__5535A963" />
+      <msdata:Relationship name="FK__Test__ID_RightAn__5535A963" msdata:parent="RightAnswers" msdata:child="Test" msdata:parentkey="RightAnswId" msdata:childkey="ID_RightAnsw" msprop:Generator_UserParentTable="RightAnswers" msprop:Generator_UserChildTable="Test" msprop:Generator_RelationVarName="relationFK__Test__ID_RightAn__5535A963" msprop:Generator_ChildPropName="GetTestRows" msprop:Generator_UserRelationName="FK__Test__ID_RightAn__5535A963" msprop:Generator_ParentPropName="RightAnswersRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

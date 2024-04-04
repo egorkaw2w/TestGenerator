@@ -56,14 +56,20 @@ namespace TestGenerator
 
         private void CreateNewTestBut_Click(object sender, RoutedEventArgs e)
         {
-            object selected = (RightAnswBox.SelectedItem as DataRowView).Row[0];
-            Test.Insert(NameField.Text, DescField.Text, FirstAnswField.Text, SecondAnswField.Text, ThirdAnswField.Text, Convert.ToInt32(selected));
-            NameField.Text = "";
-            DescField.Text = "";
-            FirstAnswField.Text = "";
-            SecondAnswField.Text = "";
-            ThirdAnswField.Text = "";
-            vivod();
+            try{
+                object selected = (RightAnswBox.SelectedItem as DataRowView).Row[0];
+                Test.Insert(NameField.Text, DescField.Text, FirstAnswField.Text, SecondAnswField.Text, ThirdAnswField.Text, Convert.ToInt32(selected));
+                NameField.Text = "";
+                DescField.Text = "";
+                FirstAnswField.Text = "";
+                SecondAnswField.Text = "";
+                ThirdAnswField.Text = "";
+                vivod();
+            }
+            catch
+            {
+
+            }
         }
 
         private void Deleter_Click(object sender, RoutedEventArgs e)
@@ -82,14 +88,22 @@ namespace TestGenerator
 
         private void Updater_Click(object sender, RoutedEventArgs e)
         {
-            object selected = (RightAnswBox.SelectedItem as DataRowView).Row[0];
-            Test.UpdateQuery(NameField.Text, DescField.Text, FirstAnswField.Text, SecondAnswField.Text, ThirdAnswField.Text, Convert.ToInt32(selected));
-            vivod();
+            try
+            {
+                object selected = (RightAnswBox.SelectedItem as DataRowView).Row[0];
+                object id = (DataGridTestView.SelectedItem as DataRowView).Row[0];
+                Test.UpdateQuery(NameField.Text, DescField.Text, FirstAnswField.Text, SecondAnswField.Text, ThirdAnswField.Text, Convert.ToInt32(selected), (int)(id));
+                vivod();
+            }
+            catch
+            {
+
+            }
         }
 
         private void vivod()
         {
-            DataGridTestView.ItemsSource = test.SelectAll();
+            DataGridTestView.ItemsSource = test.GetData();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

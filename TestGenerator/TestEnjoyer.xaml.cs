@@ -25,31 +25,51 @@ namespace TestGenerator
         TestTableAdapter Test = new TestTableAdapter();
         TestViewTableAdapter test = new TestViewTableAdapter();
         RightAnswersTableAdapter rightAnswers = new RightAnswersTableAdapter();
+        int selected = -1;
 
         public TestEnjoyer()
         {
             InitializeComponent();
+            ShowQuest();
 
-            
+
         }
 
         private void firstAnsw_Click(object sender, RoutedEventArgs e)
         {
-            
 
- /*           foreach(string i in elements)
-            {
-                
-            }*/
         }
 
         private void SecondAnsw_Click(object sender, RoutedEventArgs e)
         {
-
+            ShowQuest();
         }
 
         private void ThirdAnsw_Click(object sender, RoutedEventArgs e)
         {
+            ShowQuest();
+            /*            if ()
+                        {
+
+                        }*/
+        }
+        private void ShowQuest()
+        {
+            selected++;
+            var sel = Test.GetData()[selected];
+
+            if (sel == null)
+            {
+                selected++;
+            }
+            else
+            {
+                QuestName.Text = sel.TestName.ToString();
+                QuestDisc.Text = sel.TestDesc.ToString();
+                firstAnsw.Content = sel.FirstAnsw.ToString();
+                SecondAnsw.Content = sel.SecondAnsw.ToString();
+                ThirdAnsw.Content = sel.ThirdAnsw.ToString();
+            }
 
         }
     }

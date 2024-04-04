@@ -22,10 +22,10 @@
                 <RowDefinition Height="3*"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock x:Name="QuestName" FontSize="20"></TextBlock>
-            <TextBlock x:Name="QuestDisc" Grid.Row="1"></TextBlock>
+            <TextBlock x:Name="QuestName" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"></TextBlock>
+            <TextBlock x:Name="QuestDisc" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         </Grid>
-        <TextBlock x:Name="Reaction" Grid.Row="1"></TextBlock>
+        <TextBlock x:Name="Reaction" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         <Button x:Name="firstAnsw" Grid.Row="2" Click="firstAnsw_Click"></Button>
         <Button x:Name="SecondAnsw" Grid.Row="3" Click="SecondAnsw_Click"></Button>
         <Button x:Name="ThirdAnsw" Grid.Row="4" Click="ThirdAnsw_Click"></Button>

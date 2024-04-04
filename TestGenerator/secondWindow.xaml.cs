@@ -23,8 +23,13 @@ namespace TestGenerator
         int counter = 0;
         TestTableAdapter Test = new TestTableAdapter();
         RightAnswersTableAdapter rightAnswers = new RightAnswersTableAdapter();
-        public secondWindow()
+        public secondWindow( bool check)
         {
+            if (!check)
+            {
+                TestEdit.IsEnabled = false;
+            }
+
             InitializeComponent();
             PageFrame2.Content = new AuthorizatedUser();
             var i = Test.GetData().ToList();

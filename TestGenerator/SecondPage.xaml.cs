@@ -38,11 +38,11 @@ namespace TestGenerator
             {
                 if (DataGridTestView.SelectedItem != null)
                 {
-                    NameField.Text = ((DataGridTestView.SelectedItem as DataRowView).Row[0]).ToString();
-                    DescField.Text = ((DataGridTestView.SelectedItem as DataRowView).Row[1]).ToString();
-                    FirstAnswField.Text = ((DataGridTestView.SelectedItem as DataRowView).Row[2]).ToString();
-                    SecondAnswField.Text = ((DataGridTestView.SelectedItem as DataRowView).Row[3]).ToString();
-                    ThirdAnswField.Text = ((DataGridTestView.SelectedItem as DataRowView).Row[4]).ToString();
+                    NameField.Text = ((DataGridTestView.SelectedItem as DataRowView).Row[1]).ToString();
+                    DescField.Text = ((DataGridTestView.SelectedItem as DataRowView).Row[2]).ToString();
+                    FirstAnswField.Text = ((DataGridTestView.SelectedItem as DataRowView).Row[3]).ToString();
+                    SecondAnswField.Text = ((DataGridTestView.SelectedItem as DataRowView).Row[4]).ToString();
+                    ThirdAnswField.Text = ((DataGridTestView.SelectedItem as DataRowView).Row[5]).ToString();
                 }
             }
             catch
@@ -86,13 +86,16 @@ namespace TestGenerator
         private void Updater_Click(object sender, RoutedEventArgs e)
         {
             object selected = (RightAnswBox.SelectedItem as DataRowView).Row[0];
-            Test.UpdateQuery(NameField.Text, DescField.Text, FirstAnswField.Text, SecondAnswField.Text, ThirdAnswField.Text, Convert.ToInt32(selected));
+            object id = (DataGridTestView.SelectedItem as DataRowView).Row[0];
+            Test.UpdateQuery(NameField.Text, DescField.Text, FirstAnswField.Text, SecondAnswField.Text, ThirdAnswField.Text, Convert.ToInt32(selected),(int)(id));
             vivod();
         }
 
         private void vivod()
         {
-            DataGridTestView.ItemsSource = test.SelectAll();
+            DataGridTestView.Columns[0].Visibility = Visibility.Hidden;
+            DataGridTestView.ItemsSource = test.GetData();
+            DataGridTestView.Columns[0].Visibility = Visibility.Hidden;
         }
     }
 }
