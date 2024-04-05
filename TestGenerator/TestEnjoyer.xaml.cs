@@ -37,7 +37,7 @@ namespace TestGenerator
 
         private void firstAnsw_Click(object sender, RoutedEventArgs e)
         {
-
+            ShowQuest();
         }
 
         private void SecondAnsw_Click(object sender, RoutedEventArgs e)
@@ -55,22 +55,30 @@ namespace TestGenerator
         }
         private void ShowQuest()
         {
-            selected++;
-            var sel = Test.GetData()[selected];
-
-            if (sel == null)
+            try
             {
+
+
                 selected++;
-            }
-            else
-            {
-                QuestName.Text = sel.TestName.ToString();
-                QuestDisc.Text = sel.TestDesc.ToString();
-                firstAnsw.Content = sel.FirstAnsw.ToString();
-                SecondAnsw.Content = sel.SecondAnsw.ToString();
-                ThirdAnsw.Content = sel.ThirdAnsw.ToString();
-            }
+                var sel = Test.GetData()[selected];
 
+                if (sel == null)
+                {
+                    selected++;
+                }
+                else
+                {
+                    QuestName.Text = sel.TestName.ToString();
+                    QuestDisc.Text = sel.TestDesc.ToString();
+                    firstAnsw.Content = sel.FirstAnsw.ToString();
+                    SecondAnsw.Content = sel.SecondAnsw.ToString();
+                    ThirdAnsw.Content = sel.ThirdAnsw.ToString();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Канец");
+            }
         }
     }
 }

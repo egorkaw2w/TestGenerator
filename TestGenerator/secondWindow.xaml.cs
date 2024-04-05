@@ -25,12 +25,11 @@ namespace TestGenerator
         RightAnswersTableAdapter rightAnswers = new RightAnswersTableAdapter();
         public secondWindow( bool check)
         {
+            InitializeComponent();
             if (!check)
             {
                 TestEdit.IsEnabled = false;
             }
-
-            InitializeComponent();
             PageFrame2.Content = new AuthorizatedUser();
             var i = Test.GetData().ToList();
         }
@@ -42,8 +41,8 @@ namespace TestGenerator
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(Test.GetData().ToList().Count().ToString());
-            MainWindow window = new MainWindow();
+/*            MessageBox.Show(Test.GetData().ToList().Count().ToString());
+*/            MainWindow window = new MainWindow();
             window.Show();
             Close();
         }
@@ -56,6 +55,10 @@ namespace TestGenerator
 
         }
 
+        private void DoTest_Click(object sender, RoutedEventArgs e)
+        {
+            PageFrame2.Content = new TestEnjoyer();
+        }
     }
 
 }

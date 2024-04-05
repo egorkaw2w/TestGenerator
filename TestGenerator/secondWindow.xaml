@@ -21,7 +21,7 @@
                 </Grid.ColumnDefinitions>
                 <Button x:Name="exit" Content="Выйти" Background="#FFE03333" Foreground="White" Click="exit_Click"></Button>
                 <Button x:Name="TestEdit" Grid.Column="1" Content="Редактировать тест" Background="#FF6D8FE2" Click="TestEdit_Click"></Button>
-                <Button x:Name="DoTest" Grid.Column="2" Content="пройти тест"></Button>
+                <Button x:Name="DoTest" Grid.Column="2" Content="пройти тест" Click="DoTest_Click"></Button>
             </Grid>
             
         </Grid>

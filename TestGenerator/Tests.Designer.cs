@@ -2160,8 +2160,7 @@ namespace TestGenerator.TestsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::Microsoft.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=KOMPUTER\\SQLEXPRESS;Initial Catalog=Tests;Integrated Security=True;En" +
-                "crypt=False";
+            this._connection.ConnectionString = "Data Source=W2W-Desktop\\SQLEXPRESS;Initial Catalog=Tests;Integrated Security=True;Encrypt=False";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2400,8 +2399,7 @@ namespace TestGenerator.TestsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::Microsoft.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=KOMPUTER\\SQLEXPRESS;Initial Catalog=Tests;Integrated Security=True;En" +
-                "crypt=False";
+            this._connection.ConnectionString = "Data Source=W2W-Desktop\\SQLEXPRESS;Initial Catalog=Tests;Integrated Security=True;Encrypt=False";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2899,8 +2897,7 @@ SELECT TestID, TestName, TestDesc, FirstAnsw, SecondAnsw, ThirdAnsw, ID_RightAns
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::Microsoft.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=KOMPUTER\\SQLEXPRESS;Initial Catalog=Tests;Integrated Security=True;En" +
-                "crypt=False";
+            this._connection.ConnectionString = "Data Source=W2W-Desktop\\SQLEXPRESS;Initial Catalog=Tests;Integrated Security=True;Encrypt=False";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3568,8 +3565,7 @@ SELECT TestID, TestName, TestDesc, FirstAnsw, SecondAnsw, ThirdAnsw, ID_RightAns
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::Microsoft.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=KOMPUTER\\SQLEXPRESS;Initial Catalog=Tests;Integrated Security=True;En" +
-                "crypt=False";
+            this._connection.ConnectionString = "Data Source=W2W-Desktop\\SQLEXPRESS;Initial Catalog=Tests;Integrated Security=True;Encrypt=False";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

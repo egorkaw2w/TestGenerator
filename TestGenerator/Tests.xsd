@@ -2,9 +2,10 @@
 <xs:schema id="Tests" targetNamespace="http://tempuri.org/Tests.xsd" xmlns:mstns="http://tempuri.org/Tests.xsd" xmlns="http://tempuri.org/Tests.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsPropertyName="TestsConnectionString" ConnectionStringObject="Data Source=KOMPUTER\SQLEXPRESS;Initial Catalog=Tests;Integrated Security=True;Encrypt=False" IsAppSettingsProperty="false" Modifier="Assembly" Name="TestsConnectionString" ParameterPrefix="@" Provider="Microsoft.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TestsConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TestsConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TestGenerator.Properties.Settings.GlobalReference.Default.TestsConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RightTestViewTableAdapter" GeneratorDataComponentClassName="RightTestViewTableAdapter" Name="RightTestView" UserDataComponentName="RightTestViewTableAdapter">
@@ -221,104 +222,104 @@ SELECT TestID, TestName, TestDesc, FirstAnsw, SecondAnsw, ThirdAnsw, ID_RightAns
   <xs:element name="Tests" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Tests" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Tests">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="RightTestView" msprop:Generator_RowClassName="RightTestViewRow" msprop:Generator_RowEvHandlerName="RightTestViewRowChangeEventHandler" msprop:Generator_RowDeletedName="RightTestViewRowDeleted" msprop:Generator_RowDeletingName="RightTestViewRowDeleting" msprop:Generator_RowEvArgName="RightTestViewRowChangeEvent" msprop:Generator_TablePropName="RightTestView" msprop:Generator_RowChangedName="RightTestViewRowChanged" msprop:Generator_UserTableName="RightTestView" msprop:Generator_RowChangingName="RightTestViewRowChanging" msprop:Generator_TableClassName="RightTestViewDataTable" msprop:Generator_TableVarName="tableRightTestView">
+        <xs:element name="RightTestView" msprop:Generator_RowEvHandlerName="RightTestViewRowChangeEventHandler" msprop:Generator_RowDeletedName="RightTestViewRowDeleted" msprop:Generator_RowDeletingName="RightTestViewRowDeleting" msprop:Generator_RowEvArgName="RightTestViewRowChangeEvent" msprop:Generator_TablePropName="RightTestView" msprop:Generator_RowChangedName="RightTestViewRowChanged" msprop:Generator_UserTableName="RightTestView" msprop:Generator_RowChangingName="RightTestViewRowChanging" msprop:Generator_RowClassName="RightTestViewRow" msprop:Generator_TableClassName="RightTestViewDataTable" msprop:Generator_TableVarName="tableRightTestView">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="Правильный_x0020_ответ" msprop:Generator_ColumnPropNameInTable="Правильный_ответColumn" msprop:Generator_ColumnPropNameInRow="Правильный_ответ" msprop:Generator_UserColumnName="Правильный ответ" msprop:Generator_ColumnVarNameInTable="columnПравильный_ответ" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RightAnswers" msprop:Generator_RowEvHandlerName="RightAnswersRowChangeEventHandler" msprop:Generator_RowDeletedName="RightAnswersRowDeleted" msprop:Generator_RowDeletingName="RightAnswersRowDeleting" msprop:Generator_RowEvArgName="RightAnswersRowChangeEvent" msprop:Generator_TablePropName="RightAnswers" msprop:Generator_RowChangedName="RightAnswersRowChanged" msprop:Generator_UserTableName="RightAnswers" msprop:Generator_RowChangingName="RightAnswersRowChanging" msprop:Generator_RowClassName="RightAnswersRow" msprop:Generator_TableClassName="RightAnswersDataTable" msprop:Generator_TableVarName="tableRightAnswers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RightAnswId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="RightAnswIdColumn" msprop:Generator_ColumnPropNameInRow="RightAnswId" msprop:Generator_UserColumnName="RightAnswId" msprop:Generator_ColumnVarNameInTable="columnRightAnswId" type="xs:int" />
+              <xs:element name="RightAnswer" msprop:Generator_ColumnPropNameInTable="RightAnswerColumn" msprop:Generator_ColumnPropNameInRow="RightAnswer" msprop:Generator_UserColumnName="RightAnswer" msprop:Generator_ColumnVarNameInTable="columnRightAnswer" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Test" msprop:Generator_RowEvHandlerName="TestRowChangeEventHandler" msprop:Generator_RowDeletedName="TestRowDeleted" msprop:Generator_RowDeletingName="TestRowDeleting" msprop:Generator_RowEvArgName="TestRowChangeEvent" msprop:Generator_TablePropName="Test" msprop:Generator_RowChangedName="TestRowChanged" msprop:Generator_UserTableName="Test" msprop:Generator_RowChangingName="TestRowChanging" msprop:Generator_RowClassName="TestRow" msprop:Generator_TableClassName="TestDataTable" msprop:Generator_TableVarName="tableTest">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TestID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="TestIDColumn" msprop:Generator_ColumnPropNameInRow="TestID" msprop:Generator_UserColumnName="TestID" msprop:Generator_ColumnVarNameInTable="columnTestID" type="xs:int" />
+              <xs:element name="TestName" msprop:Generator_ColumnPropNameInTable="TestNameColumn" msprop:Generator_ColumnPropNameInRow="TestName" msprop:Generator_UserColumnName="TestName" msprop:Generator_ColumnVarNameInTable="columnTestName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestDesc" msprop:Generator_ColumnPropNameInTable="TestDescColumn" msprop:Generator_ColumnPropNameInRow="TestDesc" msprop:Generator_UserColumnName="TestDesc" msprop:Generator_ColumnVarNameInTable="columnTestDesc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FirstAnsw" msprop:Generator_ColumnPropNameInTable="FirstAnswColumn" msprop:Generator_ColumnPropNameInRow="FirstAnsw" msprop:Generator_UserColumnName="FirstAnsw" msprop:Generator_ColumnVarNameInTable="columnFirstAnsw">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SecondAnsw" msprop:Generator_ColumnPropNameInTable="SecondAnswColumn" msprop:Generator_ColumnPropNameInRow="SecondAnsw" msprop:Generator_UserColumnName="SecondAnsw" msprop:Generator_ColumnVarNameInTable="columnSecondAnsw">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ThirdAnsw" msprop:Generator_ColumnPropNameInTable="ThirdAnswColumn" msprop:Generator_ColumnPropNameInRow="ThirdAnsw" msprop:Generator_UserColumnName="ThirdAnsw" msprop:Generator_ColumnVarNameInTable="columnThirdAnsw">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_RightAnsw" msprop:Generator_ColumnPropNameInTable="ID_RightAnswColumn" msprop:Generator_ColumnPropNameInRow="ID_RightAnsw" msprop:Generator_UserColumnName="ID_RightAnsw" msprop:Generator_ColumnVarNameInTable="columnID_RightAnsw" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TestView" msprop:Generator_RowClassName="TestViewRow" msprop:Generator_RowEvHandlerName="TestViewRowChangeEventHandler" msprop:Generator_RowDeletedName="TestViewRowDeleted" msprop:Generator_RowDeletingName="TestViewRowDeleting" msprop:Generator_RowEvArgName="TestViewRowChangeEvent" msprop:Generator_TablePropName="TestView" msprop:Generator_RowChangedName="TestViewRowChanged" msprop:Generator_UserTableName="TestView" msprop:Generator_RowChangingName="TestViewRowChanging" msprop:Generator_TableClassName="TestViewDataTable" msprop:Generator_TableVarName="tableTestView">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="АЙДИ" msprop:Generator_UserColumnName="АЙДИ" msprop:Generator_ColumnPropNameInTable="АЙДИColumn" msprop:Generator_ColumnPropNameInRow="АЙДИ" msprop:Generator_ColumnVarNameInTable="columnАЙДИ" type="xs:int" />
+              <xs:element name="Название" msprop:Generator_UserColumnName="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Описание" msprop:Generator_UserColumnName="Описание" msprop:Generator_ColumnPropNameInTable="ОписаниеColumn" msprop:Generator_ColumnPropNameInRow="Описание" msprop:Generator_ColumnVarNameInTable="columnОписание">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Первый_x0020_ответ" msprop:Generator_UserColumnName="Первый ответ" msprop:Generator_ColumnPropNameInTable="Первый_ответColumn" msprop:Generator_ColumnPropNameInRow="Первый_ответ" msprop:Generator_ColumnVarNameInTable="columnПервый_ответ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Второй_x0020_ответ" msprop:Generator_UserColumnName="Второй ответ" msprop:Generator_ColumnPropNameInTable="Второй_ответColumn" msprop:Generator_ColumnPropNameInRow="Второй_ответ" msprop:Generator_ColumnVarNameInTable="columnВторой_ответ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Третий_x0020_ответ" msprop:Generator_UserColumnName="Третий ответ" msprop:Generator_ColumnPropNameInTable="Третий_ответColumn" msprop:Generator_ColumnPropNameInRow="Третий_ответ" msprop:Generator_ColumnVarNameInTable="columnТретий_ответ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="Правильный_x0020_ответ" msprop:Generator_UserColumnName="Правильный ответ" msprop:Generator_ColumnPropNameInTable="Правильный_ответColumn" msprop:Generator_ColumnPropNameInRow="Правильный_ответ" msprop:Generator_ColumnVarNameInTable="columnПравильный_ответ" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="RightAnswers" msprop:Generator_RowClassName="RightAnswersRow" msprop:Generator_RowEvHandlerName="RightAnswersRowChangeEventHandler" msprop:Generator_RowDeletedName="RightAnswersRowDeleted" msprop:Generator_RowDeletingName="RightAnswersRowDeleting" msprop:Generator_RowEvArgName="RightAnswersRowChangeEvent" msprop:Generator_TablePropName="RightAnswers" msprop:Generator_RowChangedName="RightAnswersRowChanged" msprop:Generator_UserTableName="RightAnswers" msprop:Generator_RowChangingName="RightAnswersRowChanging" msprop:Generator_TableClassName="RightAnswersDataTable" msprop:Generator_TableVarName="tableRightAnswers">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="RightAnswId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="RightAnswId" msprop:Generator_ColumnPropNameInTable="RightAnswIdColumn" msprop:Generator_ColumnPropNameInRow="RightAnswId" msprop:Generator_ColumnVarNameInTable="columnRightAnswId" type="xs:int" />
-              <xs:element name="RightAnswer" msprop:Generator_UserColumnName="RightAnswer" msprop:Generator_ColumnPropNameInTable="RightAnswerColumn" msprop:Generator_ColumnPropNameInRow="RightAnswer" msprop:Generator_ColumnVarNameInTable="columnRightAnswer" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Test" msprop:Generator_RowClassName="TestRow" msprop:Generator_RowEvHandlerName="TestRowChangeEventHandler" msprop:Generator_RowDeletedName="TestRowDeleted" msprop:Generator_RowDeletingName="TestRowDeleting" msprop:Generator_RowEvArgName="TestRowChangeEvent" msprop:Generator_TablePropName="Test" msprop:Generator_RowChangedName="TestRowChanged" msprop:Generator_UserTableName="Test" msprop:Generator_RowChangingName="TestRowChanging" msprop:Generator_TableClassName="TestDataTable" msprop:Generator_TableVarName="tableTest">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="TestID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="TestID" msprop:Generator_ColumnPropNameInTable="TestIDColumn" msprop:Generator_ColumnPropNameInRow="TestID" msprop:Generator_ColumnVarNameInTable="columnTestID" type="xs:int" />
-              <xs:element name="TestName" msprop:Generator_UserColumnName="TestName" msprop:Generator_ColumnPropNameInTable="TestNameColumn" msprop:Generator_ColumnPropNameInRow="TestName" msprop:Generator_ColumnVarNameInTable="columnTestName">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TestDesc" msprop:Generator_UserColumnName="TestDesc" msprop:Generator_ColumnPropNameInTable="TestDescColumn" msprop:Generator_ColumnPropNameInRow="TestDesc" msprop:Generator_ColumnVarNameInTable="columnTestDesc">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="FirstAnsw" msprop:Generator_UserColumnName="FirstAnsw" msprop:Generator_ColumnPropNameInTable="FirstAnswColumn" msprop:Generator_ColumnPropNameInRow="FirstAnsw" msprop:Generator_ColumnVarNameInTable="columnFirstAnsw">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="SecondAnsw" msprop:Generator_UserColumnName="SecondAnsw" msprop:Generator_ColumnPropNameInTable="SecondAnswColumn" msprop:Generator_ColumnPropNameInRow="SecondAnsw" msprop:Generator_ColumnVarNameInTable="columnSecondAnsw">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ThirdAnsw" msprop:Generator_UserColumnName="ThirdAnsw" msprop:Generator_ColumnPropNameInTable="ThirdAnswColumn" msprop:Generator_ColumnPropNameInRow="ThirdAnsw" msprop:Generator_ColumnVarNameInTable="columnThirdAnsw">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ID_RightAnsw" msprop:Generator_UserColumnName="ID_RightAnsw" msprop:Generator_ColumnPropNameInTable="ID_RightAnswColumn" msprop:Generator_ColumnPropNameInRow="ID_RightAnsw" msprop:Generator_ColumnVarNameInTable="columnID_RightAnsw" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="TestView" msprop:Generator_RowEvHandlerName="TestViewRowChangeEventHandler" msprop:Generator_RowDeletedName="TestViewRowDeleted" msprop:Generator_RowDeletingName="TestViewRowDeleting" msprop:Generator_RowEvArgName="TestViewRowChangeEvent" msprop:Generator_TablePropName="TestView" msprop:Generator_RowChangedName="TestViewRowChanged" msprop:Generator_RowChangingName="TestViewRowChanging" msprop:Generator_TableClassName="TestViewDataTable" msprop:Generator_RowClassName="TestViewRow" msprop:Generator_TableVarName="tableTestView" msprop:Generator_UserTableName="TestView">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="АЙДИ" msprop:Generator_ColumnPropNameInRow="АЙДИ" msprop:Generator_ColumnPropNameInTable="АЙДИColumn" msprop:Generator_ColumnVarNameInTable="columnАЙДИ" msprop:Generator_UserColumnName="АЙДИ" type="xs:int" />
-              <xs:element name="Название" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_UserColumnName="Название">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Описание" msprop:Generator_ColumnPropNameInRow="Описание" msprop:Generator_ColumnPropNameInTable="ОписаниеColumn" msprop:Generator_ColumnVarNameInTable="columnОписание" msprop:Generator_UserColumnName="Описание">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Первый_x0020_ответ" msprop:Generator_ColumnPropNameInRow="Первый_ответ" msprop:Generator_ColumnPropNameInTable="Первый_ответColumn" msprop:Generator_ColumnVarNameInTable="columnПервый_ответ" msprop:Generator_UserColumnName="Первый ответ">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Второй_x0020_ответ" msprop:Generator_ColumnPropNameInRow="Второй_ответ" msprop:Generator_ColumnPropNameInTable="Второй_ответColumn" msprop:Generator_ColumnVarNameInTable="columnВторой_ответ" msprop:Generator_UserColumnName="Второй ответ">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Третий_x0020_ответ" msprop:Generator_ColumnPropNameInRow="Третий_ответ" msprop:Generator_ColumnPropNameInTable="Третий_ответColumn" msprop:Generator_ColumnVarNameInTable="columnТретий_ответ" msprop:Generator_UserColumnName="Третий ответ">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Правильный_x0020_ответ" msprop:Generator_ColumnPropNameInRow="Правильный_ответ" msprop:Generator_ColumnPropNameInTable="Правильный_ответColumn" msprop:Generator_ColumnVarNameInTable="columnПравильный_ответ" msprop:Generator_UserColumnName="Правильный ответ" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -339,7 +340,7 @@ SELECT TestID, TestName, TestDesc, FirstAnsw, SecondAnsw, ThirdAnsw, ID_RightAns
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Test__ID_RightAn__5535A963" msdata:parent="RightAnswers" msdata:child="Test" msdata:parentkey="RightAnswId" msdata:childkey="ID_RightAnsw" msprop:Generator_UserParentTable="RightAnswers" msprop:Generator_UserChildTable="Test" msprop:Generator_RelationVarName="relationFK__Test__ID_RightAn__5535A963" msprop:Generator_ChildPropName="GetTestRows" msprop:Generator_UserRelationName="FK__Test__ID_RightAn__5535A963" msprop:Generator_ParentPropName="RightAnswersRow" />
+      <msdata:Relationship name="FK__Test__ID_RightAn__5535A963" msdata:parent="RightAnswers" msdata:child="Test" msdata:parentkey="RightAnswId" msdata:childkey="ID_RightAnsw" msprop:Generator_UserParentTable="RightAnswers" msprop:Generator_UserChildTable="Test" msprop:Generator_RelationVarName="relationFK__Test__ID_RightAn__5535A963" msprop:Generator_ChildPropName="GetTestRows" msprop:Generator_ParentPropName="RightAnswersRow" msprop:Generator_UserRelationName="FK__Test__ID_RightAn__5535A963" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
